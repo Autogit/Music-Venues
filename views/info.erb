@@ -1,0 +1,21 @@
+
+<h1>
+  Upcoming bands for <%= @venue.name %>
+</h1>
+
+<body>
+  <% @genre.each do |key, value| %>
+    <br>
+    <%= key %> : 
+      <% value.each do |v| %>
+        <%= v.name %>
+      <% end %>
+  <% end %>
+</body>
+
+<br>
+
+<br>
+
+<a href="/edit/<%= @venue.id %>">Edit</a>
+<a href="/venues">Home</a>

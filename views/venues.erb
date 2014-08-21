@@ -1,0 +1,25 @@
+
+
+<h1>
+  List of Venues
+</h1>
+
+<body>
+  <% if @venue.valid? %>
+      <% @venues.each do |x| %>
+        <li>
+          <a href="/venues/<%= x.id %>"><%= x.name %></a> : <%= x.address %>
+        </li>
+      <% end %>
+  <% else %>
+    <% @venue.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+</body>
+
+<br>
+<br>
+
+<a href="/add">Add Venue</a>
+

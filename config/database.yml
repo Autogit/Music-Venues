@@ -1,0 +1,7 @@
+development:
+  database: music_venues.db
+  adapter: sqlite3
+  
+test:
+  database: music_venues_test.db
+  adapter: sqlite3

@@ -1,0 +1,11 @@
+
+
+<h1>
+  Configure Venue
+</h1>
+
+<form action="/edit/<%= @venue.id %>/update" method="post">
+  <p>Name: <input type="text" name="venue" value="<%= @venue.name %>"></p>
+  <p>Address: <input type="text" name="address" value="<%= @venue.address %>"></p>
+  <input type="Submit">
+</form>
