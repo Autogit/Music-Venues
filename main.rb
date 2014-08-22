@@ -1,11 +1,7 @@
-require "pry"
+require "rubygems"
+require "bundler"
 
-require "sinatra"
-require "sinatra/reloader"
-require "sinatra/activerecord"
-require "geocoder"
-
-require "sqlite3"
+Bundler.require
 
 require_relative "./models/band.rb"
 require_relative "./models/genre.rb"
