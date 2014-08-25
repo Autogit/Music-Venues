@@ -8,7 +8,6 @@ require_relative "./models/genre.rb"
 require_relative "./models/venue.rb"
 
 # Deletes all of the rows in the venues table each time you start the application.
-Venue.delete_all
 
 # Routes you to the home.erb.
 get "/" do
