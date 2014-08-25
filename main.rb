@@ -38,7 +38,8 @@ get "/edit/:venue_id" do
 end
 
 post "/create_user" do
-  @user = User
+  @user = User.create(name: params[:name])
+  
   
 end
 
