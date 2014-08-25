@@ -25,7 +25,7 @@ end
 
 # Routes you to add.erb.
 get "/add" do
-  erb :add
+  erb :add_user
 end
 
 # Sets @venue to a specific venue.id from params that is selected in venues.erb.
@@ -35,6 +35,11 @@ get "/edit/:venue_id" do
   @venue = Venue.find(params[:venue_id])
   
   erb :edit
+end
+
+post "/create_user" do
+  @user = User
+  
 end
 
 # Creates the @venue from params that user inputs in add.erb.
