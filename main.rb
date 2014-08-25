@@ -28,6 +28,8 @@ get "/add" do
   erb :add_user
 end
 
+get "/add_venue" do
+  erb :
 # Sets @venue to a specific venue.id from params that is selected in venues.erb.
 #
 # Routes you to edit.erb.
