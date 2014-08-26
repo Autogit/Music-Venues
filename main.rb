@@ -19,19 +19,23 @@ end
 # Routes you to venues.erb.
 get "/venues" do
   @venues = Venue.all
-  
   erb :venues
 end
 
-# Routes you to add.erb.
-get "/add" do
+# Routes you to add_user.erb
+get "/add_user" do
   erb :add_user
 end
 
-# get "/add_venue" do
-#   erb :
-# end
+# Routes you to add_venue.erb
+get "/add_venue" do
+  erb :add_venue
+end
 
+get "/users" do
+  @users = User.all
+  erb :users
+end
 
 # Sets @venue to a specific venue.id from params that is selected in venues.erb.
 #
@@ -42,9 +46,14 @@ get "/edit/:venue_id" do
   erb :edit
 end
 
+# Creates new user
+#
+# Routes you to ???
 post "/create_user" do
   @user = User.create(name: params[:name])
   
+  erb :user_home
+end
   
 end
 
