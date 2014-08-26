@@ -54,8 +54,6 @@ post "/create_user" do
   
   erb :user_home
 end
-  
-end
 
 # Creates the @venue from params that user inputs in add.erb.
 # From the name attribute, gets the coordinates using geocoder / .coords method => venue.rb
