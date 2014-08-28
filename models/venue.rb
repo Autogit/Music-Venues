@@ -1,6 +1,6 @@
 class Venue < ActiveRecord::Base
   has_many :bands
-  has_many :review
+  has_many :reviews
   
   validates :name, :uniqueness => true
   
