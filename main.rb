@@ -7,6 +7,39 @@ require_relative "./models/band.rb"
 require_relative "./models/genre.rb"
 require_relative "./models/venue.rb"
 
+
+
+# home
+get "/" do
+  # Add user
+  # Choose existing user
+  # View all venues
+end
+
+# Add User
+get "/add_user" do
+  # Adds a user
+  # routes to create
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Deletes all of the rows in the venues table each time you start the application.
 
 # Routes you to the home.erb.
@@ -32,6 +65,15 @@ get "/add_venue" do
   erb :add_venue
 end
 
+post "/create_venue" do
+  @venue = Venue.create(name: params[:venue])
+  @venue.coords
+  @venue.location
+  @venues = Venue.all
+  
+  erb :venues
+end
+
 get "/users" do
   @users = User.all
   erb :users
@@ -51,7 +93,12 @@ end
 # Routes you to ???
 post "/create_user" do
   @user = User.create(name: params[:name])
-  
+  erb :user_home
+end
+
+get "/user/:user_id/home" do
+  @user = User.find(params[:user_id])
+  @user_venue = Venue.find(venue_id: @user.id)
   erb :user_home
 end
 
@@ -61,14 +108,18 @@ end
 # Sets @venues variable to all of the venues in the venues table.
 #
 # Routes to venues.erb.
-post "/create" do
-  @venue = Venue.create(name: params[:venue])
-  @venue.coords
-  @venue.location
-  @venues = Venue.all
-  
-  erb :venues
-end
+
+
+# post "/create" do
+#   @venue = Venue.create(name: params[:venue])
+#   @venue.coords
+#   @venue.location
+#   @venues = Venue.all
+#
+#   erb :venues
+# end
+
+
 
 # Sets @venue to a specific venue.id from params that is selected in venues.erb.
 # @bands = Finds each band in the bands table that is playing at the venue in @venue.
