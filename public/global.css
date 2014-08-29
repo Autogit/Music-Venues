@@ -1,0 +1,30 @@
+.cf{
+  width: 100%;
+  background: red;
+}
+
+.cf:before, .cf:after{
+  content: " ";
+  display: block;
+}
+
+.cf:after{
+  clear: both;
+}
+
+#title_img {
+  width: auto;
+  float: left;
+  padding-left: 50px;
+}
+
+#link_menu li{
+  float: right;
+  padding-top: 25px;
+  display: inline-block;
+}
+
+#test li{
+  width: 100%;
+  background: blue;
+}
