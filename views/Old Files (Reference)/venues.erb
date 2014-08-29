@@ -5,7 +5,7 @@
 </h1>
 
 <body>
-  <% if @venue.validx``? %>
+  <% if @venue.valid? %>
       <% @venues.each do |x| %>
         <li>
           <a href="/venues/<%= x.id %>"><%= x.name %></a> : <%= x.address %>

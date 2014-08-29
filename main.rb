@@ -75,8 +75,25 @@ get "/user/:user_id/home" do
   erb :user_home
 end
 
+get "/user/:user_id/venue_info/:venue_id" do
+  @user = User.find(params[:user_id])
+  @venue = Venue.find(params[:venue_id])
+  @bands = Band.where(venue_id: @venue.id)
+  
+  @genre = {}
+
+  gen = []
+  
+  @bands.each do |b|
+    gen = b.genres
+    @genre[b.name] = gen
+  end
+  
+  erb :venue_info
+end
+
 # Adds a new band for a venue
-get "/:venue_id/add_band" do
+post "/user/:user_id/venue_info/:venue_id/add_band" do
   # Creates a new band for venue
   erb :add_band
 end

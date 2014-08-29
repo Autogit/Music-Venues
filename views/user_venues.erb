@@ -2,7 +2,7 @@
   <%= "There are no venues" %>
 <% else %>
   <% @venues.each do |v| %>
-    <a href="/venue_info"><%= v.name %></a> : <%= v.address %><a href="/user/:user_id/:venue_id/review">Write a Review</a>
+    <a href="/user/<%= @user.id %>/venue_info/<%= v.id %>"><%= v.name %></a> : <%= v.address %><a href="/user/:user_id/:venue_id/review">Write a Review</a>
   <% end %>
 <% end %>
 

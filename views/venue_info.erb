@@ -1,0 +1,21 @@
+<% if @bands.empty? %>
+  <%= "No bands playing at this venue." %>
+<% else %>
+  <% @genre.each do |key, value| %>
+    <br>
+    <%= key %> : 
+      <% value.each do |v| %>
+        <%= v.name %>
+      <% end %>
+  <% end %>
+<% end %>
+
+<form action="/user/<%= @user.id %>/venue_info/<%= @venue.id %>/add_band" method="post">
+<p><input type="text" placeholder="Band Name" name="band"><input type="Submit"></p>
+</form>
+
+<p>Genre</p>
+
+<br>
+<a href="/user/<%= @user.id %>/venue_info/<%= @venue.id %>/add_band">Add a new band</a>
+<a href="/">Home</a>
