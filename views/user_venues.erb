@@ -1,0 +1,21 @@
+<% if @venues.empty? %>
+  <%= "There are no venues" %>
+<% else %>
+  <% @venues.each do |v| %>
+    <a href="/venue_info"><%= v.name %></a> : <%= v.address %><a href="/user/:user_id/:venue_id/review">Write a Review</a>
+  <% end %>
+<% end %>
+
+
+<h1>
+  Add a Venue.
+</h1>
+
+<form action="/user/<%= @user.id %>/add_venue" method="post">
+<p><input type="text" placeholder="Name" name="venue"><input type="Submit"></p>
+</form>
+
+
+<br>
+<br>
+<a href="/">Home</a>

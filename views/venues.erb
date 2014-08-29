@@ -1,0 +1,9 @@
+<% if @venues.empty? %>
+  <%= "There are no venues" %>
+<% else %>
+  <% @venues.each do |v| %>
+    <%= v.name %>
+  <% end %>
+<% end %>
+
+<a href="/">Home</a>

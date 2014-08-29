@@ -32,10 +32,21 @@ end
 
 # Venue list WITH a user
 get "/user/:user_id/venues" do
+  @user = User.find(params[:user_id])
   @venues = Venue.all
   # Add new venue
   # Add new band for a venue
   # Link back to USER home page
+  erb :user_venues
+end
+
+post "/user/:user_id/add_venue" do
+  @user = User.find(params[:user_id])
+  @venue = Venue.create(name: params[:venue])
+  @venue.coords
+  @venue.location
+  @venues = Venue.all
+  # link back to user_venues
   erb :user_venues
 end
 
@@ -55,7 +66,7 @@ end
 # User Home
 get "/user/:user_id/home" do
   @user = User.find(params[:user_id])
-  @reviews = Review.find(review_id: @user.id)
+  # @reviews = Review.find(review_id: @user.id)
   # Lists user name
   # Lists all venues for user
   # Lists all reviews for user
